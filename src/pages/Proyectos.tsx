@@ -98,12 +98,12 @@ const Proyectos = () => {
             Contáctenos por WhatsApp y cuéntenos sobre su visión. 
             Trabajaremos juntos para hacerla realidad.
           </p>
-          <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-            <Button variant="whatsapp" size="xl" className="gap-3">
+          <Button asChild variant="whatsapp" size="xl" className="gap-3">
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="w-6 h-6" />
               Iniciar Mi Proyecto
-            </Button>
-          </a>
+            </a>
+          </Button>
         </div>
       </section>
     </Layout>

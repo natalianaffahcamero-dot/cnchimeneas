@@ -67,15 +67,15 @@ const Footer = () => {
               Contacto
             </h4>
             <div className="space-y-4">
-              <a 
-                href={getWhatsAppUrl()} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-muted-foreground hover:text-[#25D366] transition-colors group"
-              >
-                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">{WHATSAPP_NUMBER}</span>
-              </a>
+               <a
+                 href={getWhatsAppUrl()}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="flex items-center gap-3 text-muted-foreground hover:text-[#25D366] transition-colors group"
+               >
+                 <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                 <span className="text-sm">{WHATSAPP_NUMBER}</span>
+               </a>
               <a 
                 href={`mailto:${EMAIL}`}
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"

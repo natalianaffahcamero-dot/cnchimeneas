@@ -83,12 +83,12 @@ const Catalogo = () => {
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Nuestro equipo está listo para asesorarlo en la selección de la chimenea perfecta para su espacio.
           </p>
-          <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-            <Button variant="whatsapp" size="xl" className="gap-3">
+          <Button asChild variant="whatsapp" size="xl" className="gap-3">
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="w-6 h-6" />
               Solicitar Asesoría
-            </Button>
-          </a>
+            </a>
+          </Button>
         </div>
       </section>
     </Layout>

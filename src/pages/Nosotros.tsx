@@ -113,12 +113,12 @@ const Nosotros = () => {
                   </div>
                 ))}
               </div>
-              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-                <Button variant="whatsapp" size="xl" className="gap-3">
+              <Button asChild variant="whatsapp" size="xl" className="gap-3">
+                <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-6 h-6" />
                   Conocer Más
-                </Button>
-              </a>
+                </a>
+              </Button>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-card rounded-2xl p-8 border border-border text-center">
@@ -152,12 +152,12 @@ const Nosotros = () => {
             Contáctenos hoy y descubra cómo podemos ayudarle a crear 
             el ambiente perfecto con una chimenea de lujo.
           </p>
-          <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-            <Button variant="whatsapp" size="xl" className="gap-3">
+          <Button asChild variant="whatsapp" size="xl" className="gap-3">
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="w-6 h-6" />
               Iniciar Conversación
-            </Button>
-          </a>
+            </a>
+          </Button>
         </div>
       </section>
     </Layout>
