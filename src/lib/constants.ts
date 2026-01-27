@@ -1,8 +1,9 @@
-export const WHATSAPP_URL = "https://wa.link/685apu";
 export const WHATSAPP_NUMBER = "+57 317 641 0220";
 export const EMAIL = "cn.chimeneas@gmail.com";
 
-export const getWhatsAppUrl = () => WHATSAPP_URL;
+export const getWhatsAppUrl = () => {
+  return "https://wa.me/573176410220?text=Hola%2C%20quiero%20información%20sobre%20chimeneas%20para%20mi%20hogar.";
+};
 
 export const CATEGORIES = [
   {
