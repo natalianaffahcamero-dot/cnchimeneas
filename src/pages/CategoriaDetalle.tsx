@@ -103,7 +103,7 @@ const CategoriaDetalle = () => {
     );
   }
 
-  const whatsappMessage = `Hola, quiero información sobre chimeneas ${category.name} para mi hogar.`;
+  
 
   return (
     <Layout>
@@ -132,7 +132,7 @@ const CategoriaDetalle = () => {
               <p className="text-muted-foreground text-lg leading-relaxed">
                 {category.description}
               </p>
-              <a href={getWhatsAppUrl(whatsappMessage)} target="_blank" rel="noopener noreferrer">
+              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
                 <Button variant="whatsapp" size="xl" className="gap-3">
                   <MessageCircle className="w-6 h-6" />
                   Consultar Precios
@@ -200,7 +200,7 @@ const CategoriaDetalle = () => {
             Contáctenos por WhatsApp para recibir asesoría personalizada, 
             cotizaciones y resolver todas sus dudas.
           </p>
-          <a href={getWhatsAppUrl(whatsappMessage)} target="_blank" rel="noopener noreferrer">
+          <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
             <Button variant="whatsapp" size="xl" className="gap-3">
               <MessageCircle className="w-6 h-6" />
               Solicitar Información

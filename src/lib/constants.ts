@@ -1,11 +1,8 @@
-export const WHATSAPP_NUMBER = "+573176410220";
-export const WHATSAPP_MESSAGE = "Hola, quiero información sobre chimeneas para mi hogar.";
+export const WHATSAPP_URL = "https://wa.link/685apu";
+export const WHATSAPP_NUMBER = "+57 317 641 0220";
 export const EMAIL = "cn.chimeneas@gmail.com";
 
-export const getWhatsAppUrl = (message?: string) => {
-  const encodedMessage = encodeURIComponent(message || WHATSAPP_MESSAGE);
-  return `https://wa.me/${WHATSAPP_NUMBER.replace(/\s/g, "").replace("+", "")}?text=${encodedMessage}`;
-};
+export const getWhatsAppUrl = () => WHATSAPP_URL;
 
 export const CATEGORIES = [
   {
