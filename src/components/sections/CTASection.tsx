@@ -24,7 +24,7 @@ const CTASection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.link/685apu" target="_blank" rel="noopener noreferrer">
               <Button variant="whatsapp" size="xl" className="gap-3 w-full sm:w-auto">
                 <MessageCircle className="w-6 h-6" />
                 Hablar con un Asesor
