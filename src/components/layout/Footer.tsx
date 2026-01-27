@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, Mail, MapPin, Phone } from "lucide-react";
+import { MessageCircle, Mail, MapPin } from "lucide-react";
 import { NAV_LINKS, EMAIL, WHATSAPP_NUMBER, getWhatsAppUrl } from "@/lib/constants";
+import logoImg from "@/assets/logo-cn-chimeneas.png";
 
 const Footer = () => {
   return (
@@ -10,9 +11,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="inline-block">
-              <span className="font-display text-2xl font-bold text-foreground">
-                CN <span className="text-gradient">Chimeneas</span>
-              </span>
+              <img 
+                src={logoImg} 
+                alt="CN Chimeneas" 
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Especialistas en chimeneas de lujo. Transformamos espacios con calor, diseño y tecnología de vanguardia.
