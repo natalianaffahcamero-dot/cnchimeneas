@@ -3,6 +3,7 @@ import { Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS, getWhatsAppUrl } from "@/lib/constants";
+import logoImg from "@/assets/logo-cn-chimeneas.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,15 +13,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="flex flex-col">
-              <span className="font-display text-2xl font-bold text-foreground tracking-tight">
-                CN <span className="text-gradient">Chimeneas</span>
-              </span>
-              <span className="text-xs text-muted-foreground tracking-widest uppercase">
-                Calor & Diseño
-              </span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={logoImg} 
+              alt="CN Chimeneas" 
+              className="h-14 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
