@@ -36,12 +36,12 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-              <Button variant="whatsapp" size="lg" className="gap-2">
+            <Button asChild variant="whatsapp" size="lg" className="gap-2">
+              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5" />
                 WhatsApp
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,17 +68,12 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <a 
-                href={getWhatsAppUrl()} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="mt-4"
-              >
-                <Button variant="whatsapp" size="lg" className="w-full gap-2">
-                  <MessageCircle className="w-5 h-5" />
-                  Contáctanos por WhatsApp
-                </Button>
-              </a>
+               <Button asChild variant="whatsapp" size="lg" className="w-full gap-2 mt-4">
+                 <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
+                   <MessageCircle className="w-5 h-5" />
+                   Contáctanos por WhatsApp
+                 </a>
+               </Button>
             </nav>
           </div>
         )}

@@ -145,12 +145,12 @@ const Contacto = () => {
               </div>
 
               {/* WhatsApp CTA */}
-              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-                <Button variant="whatsapp" size="xl" className="w-full gap-3">
+              <Button asChild variant="whatsapp" size="xl" className="w-full gap-3">
+                <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-6 h-6" />
                   Escribir por WhatsApp
-                </Button>
-              </a>
+                </a>
+              </Button>
             </div>
 
             {/* Contact Form */}

@@ -24,12 +24,12 @@ const CTASection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <a href="https://wa.link/685apu" target="_blank" rel="noopener noreferrer">
-              <Button variant="whatsapp" size="xl" className="gap-3 w-full sm:w-auto">
+            <Button asChild variant="whatsapp" size="xl" className="gap-3 w-full sm:w-auto">
+              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-6 h-6" />
                 Hablar con un Asesor
-              </Button>
-            </a>
+              </a>
+            </Button>
             <a href="/catalogo">
               <Button variant="premium" size="xl" className="gap-3 w-full sm:w-auto">
                 Explorar Catálogo

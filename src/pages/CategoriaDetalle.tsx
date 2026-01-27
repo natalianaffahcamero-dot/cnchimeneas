@@ -132,12 +132,12 @@ const CategoriaDetalle = () => {
               <p className="text-muted-foreground text-lg leading-relaxed">
                 {category.description}
               </p>
-              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-                <Button variant="whatsapp" size="xl" className="gap-3">
+              <Button asChild variant="whatsapp" size="xl" className="gap-3">
+                <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-6 h-6" />
                   Consultar Precios
-                </Button>
-              </a>
+                </a>
+              </Button>
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden">
               <img
@@ -200,12 +200,12 @@ const CategoriaDetalle = () => {
             Contáctenos por WhatsApp para recibir asesoría personalizada, 
             cotizaciones y resolver todas sus dudas.
           </p>
-          <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-            <Button variant="whatsapp" size="xl" className="gap-3">
+          <Button asChild variant="whatsapp" size="xl" className="gap-3">
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="w-6 h-6" />
               Solicitar Información
-            </Button>
-          </a>
+            </a>
+          </Button>
         </div>
       </section>
     </Layout>
