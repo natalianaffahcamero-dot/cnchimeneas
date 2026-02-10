@@ -22,9 +22,9 @@ const HeroSection = () => {
         <div className="max-w-2xl space-y-8 animate-fade-up">
           <div className="space-y-2">
             <p className="text-primary font-semibold tracking-widest uppercase text-sm drop-shadow-lg">
-              Calor & Diseño Premium
+              Calor y diseño para tu hogar
             </p>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight drop-shadow-lg">
               Chimeneas que
               <span className="block text-gradient drop-shadow-lg">transforman espacios</span>
             </h1>
@@ -39,7 +39,7 @@ const HeroSection = () => {
             <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
               <Button variant="whatsapp" size="xl" className="gap-3 w-full sm:w-auto">
                 <MessageCircle className="w-6 h-6" />
-                Solicitar Asesoría
+                Cotizar mi proyecto
               </Button>
             </a>
             <a href="/catalogo">
