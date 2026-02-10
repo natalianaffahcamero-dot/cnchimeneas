@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, Star, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CATEGORIES, getWhatsAppUrl } from "@/lib/constants";
 
@@ -8,6 +8,7 @@ import ventFreeImg from "@/assets/category-ventfree.jpg";
 import ventedImg from "@/assets/category-vented.jpg";
 import electricImg from "@/assets/category-electric.jpg";
 import exteriorImg from "@/assets/category-exterior.jpg";
+import verticalFeaturedImg from "@/assets/chimenea-vertical-featured.jpg";
 
 const categoryImages: Record<string, string> = {
   "vent-free": ventFreeImg,
