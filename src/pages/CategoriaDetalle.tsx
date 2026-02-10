@@ -4,17 +4,45 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, ArrowLeft, Check } from "lucide-react";
 import { CATEGORIES, getWhatsAppUrl } from "@/lib/constants";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import ventFreeImg from "@/assets/category-ventfree.jpg";
 import ventedImg from "@/assets/category-vented.jpg";
 import electricImg from "@/assets/category-electric.jpg";
 import exteriorImg from "@/assets/category-exterior.jpg";
 
+import ventfreeVar1 from "@/assets/ventfree-var1.jpg";
+import ventfreeVar2 from "@/assets/ventfree-var2.jpg";
+import ventfreeVar3 from "@/assets/ventfree-var3.jpg";
+import ventfreeVar4 from "@/assets/ventfree-var4.jpg";
+
+import ventedVar1 from "@/assets/vented-var1.jpg";
+import ventedVar2 from "@/assets/vented-var2.jpg";
+import ventedVar3 from "@/assets/vented-var3.jpg";
+import ventedVar4 from "@/assets/vented-var4.jpg";
+
+import electricVar1 from "@/assets/electric-var1.jpg";
+import electricVar2 from "@/assets/electric-var2.jpg";
+import electricVar3 from "@/assets/electric-var3.jpg";
+import electricVar4 from "@/assets/electric-var4.jpg";
+
+import exteriorVar1 from "@/assets/exterior-var1.jpg";
+import exteriorVar2 from "@/assets/exterior-var2.jpg";
+import exteriorVar3 from "@/assets/exterior-var3.jpg";
+import exteriorVar4 from "@/assets/exterior-var4.jpg";
+
 const categoryImages: Record<string, string> = {
   "vent-free": ventFreeImg,
   "vented": ventedImg,
   "electricas": electricImg,
   "exterior": exteriorImg,
+};
+
+const categoryGallery: Record<string, string[]> = {
+  "vent-free": [ventFreeImg, ventfreeVar1, ventfreeVar2, ventfreeVar3, ventfreeVar4],
+  "vented": [ventedImg, ventedVar1, ventedVar2, ventedVar3, ventedVar4],
+  "electricas": [electricImg, electricVar1, electricVar2, electricVar3, electricVar4],
+  "exterior": [exteriorImg, exteriorVar1, exteriorVar2, exteriorVar3, exteriorVar4],
 };
 
 const categoryDetails: Record<string, { features: string[]; specs: string[] }> = {
@@ -84,14 +112,15 @@ const CategoriaDetalle = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
   const category = CATEGORIES.find((c) => c.id === categoryId);
   const details = categoryId ? categoryDetails[categoryId] : null;
-  const image = categoryId ? categoryImages[categoryId] : "";
+  const gallery = categoryId ? categoryGallery[categoryId] : [];
+  const [selectedImg, setSelectedImg] = useState(0);
 
   if (!category || !details) {
     return (
       <Layout>
         <div className="min-h-[60vh] flex items-center justify-center">
           <div className="text-center">
-            <h1 className="font-display text-3xl font-bold text-foreground mb-4">
+            <h1 className="text-3xl font-bold text-foreground mb-4">
               Categoría no encontrada
             </h1>
             <Link to="/catalogo">
@@ -102,8 +131,6 @@ const CategoriaDetalle = () => {
       </Layout>
     );
   }
-
-  
 
   return (
     <Layout>
@@ -118,7 +145,7 @@ const CategoriaDetalle = () => {
         </Link>
       </div>
 
-      {/* Hero */}
+      {/* Hero with Gallery */}
       <section className="relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -126,7 +153,7 @@ const CategoriaDetalle = () => {
               <p className="text-primary font-medium tracking-widest uppercase text-sm">
                 {category.shortDescription}
               </p>
-              <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground">
+              <h1 className="text-5xl md:text-6xl font-bold text-foreground">
                 Chimeneas <span className="text-gradient">{category.name}</span>
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
@@ -139,13 +166,31 @@ const CategoriaDetalle = () => {
                 </a>
               </Button>
             </div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden">
-              <img
-                src={image}
-                alt={category.name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
+            <div className="space-y-4">
+              <div className="relative aspect-square rounded-2xl overflow-hidden">
+                <img
+                  src={gallery[selectedImg] || gallery[0]}
+                  alt={category.name}
+                  className="w-full h-full object-cover transition-all duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
+              </div>
+              {/* Thumbnails */}
+              <div className="grid grid-cols-5 gap-2">
+                {gallery.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setSelectedImg(i)}
+                    className={`aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                      selectedImg === i
+                        ? "border-primary shadow-glow"
+                        : "border-border opacity-70 hover:opacity-100"
+                    }`}
+                  >
+                    <img src={img} alt={`${category.name} variación ${i + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -155,9 +200,8 @@ const CategoriaDetalle = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Features */}
             <div className="bg-card rounded-2xl p-8 border border-border">
-              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl font-bold text-foreground mb-6">
                 Características
               </h2>
               <ul className="space-y-4">
@@ -171,10 +215,8 @@ const CategoriaDetalle = () => {
                 ))}
               </ul>
             </div>
-
-            {/* Specs */}
             <div className="bg-secondary/50 rounded-2xl p-8 border border-border">
-              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl font-bold text-foreground mb-6">
                 Especificaciones
               </h2>
               <ul className="space-y-4">
@@ -193,7 +235,7 @@ const CategoriaDetalle = () => {
       {/* CTA */}
       <section className="py-20 bg-gradient-dark">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             ¿Interesado en chimeneas {category.name}?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
