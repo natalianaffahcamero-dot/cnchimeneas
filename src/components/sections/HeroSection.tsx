@@ -39,7 +39,7 @@ const HeroSection = () => {
             <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
               <Button variant="whatsapp" size="xl" className="gap-3 w-full sm:w-auto">
                 <MessageCircle className="w-6 h-6" />
-                Solicitar Asesoría
+                Cotizar mi proyecto
               </Button>
             </a>
             <a href="/catalogo">

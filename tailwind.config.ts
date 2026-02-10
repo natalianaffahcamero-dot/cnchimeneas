@@ -71,8 +71,8 @@ export default {
   		},
   		fontFamily: {
   			display: [
-  				'Playfair Display',
-  				'serif'
+  				'Montserrat',
+  				'sans-serif'
   			],
   			body: [
   				'Inter',
