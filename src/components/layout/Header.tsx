@@ -21,8 +21,8 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -34,29 +34,27 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Button asChild variant="whatsapp" size="lg" className="gap-2">
+          {/* CTA + Mobile Menu */}
+          <div className="flex items-center gap-3">
+            <Button asChild variant="whatsapp" size="default" className="gap-2 hidden sm:inline-flex">
               <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-4 h-4" />
                 WhatsApp
               </a>
             </Button>
+            <button
+              className="md:hidden text-foreground p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-foreground p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-6 border-t border-border/50 animate-fade-in">
+          <div className="md:hidden py-6 border-t border-border/50 animate-fade-in">
             <nav className="flex flex-col gap-4">
               {NAV_LINKS.map((link) => (
                 <Link
