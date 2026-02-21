@@ -11,8 +11,8 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Chimenea de lujo en sala moderna"
-          className="w-full h-full object-cover"
-        />
+          className="w-full h-full object-cover" />
+
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       </div>
@@ -21,8 +21,8 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl space-y-8 animate-fade-up">
           <div className="space-y-2">
-            <p className="text-primary font-semibold tracking-widest uppercase text-sm drop-shadow-lg">
-              Calor y diseño para tu hogar
+            <p className="text-primary font-semibold tracking-widest uppercase text-sm drop-shadow-lg mx-0 py-[30px]">
+              Calor y diseño perfectos para tu hogar
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight drop-shadow-lg">
               Chimeneas que
@@ -72,8 +72,8 @@ const HeroSection = () => {
 
       {/* Decorative glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-glow opacity-50 pointer-events-none" />
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;

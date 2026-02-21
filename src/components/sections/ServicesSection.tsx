@@ -3,25 +3,25 @@ import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl } from "@/lib/constants";
 
 const services = [
-  {
-    icon: MapPin,
-    title: "Visita Técnica a Domicilio",
-    description: "Nuestro equipo visita tu hogar para evaluar el espacio, tomar medidas y recomendarte la chimenea ideal según las condiciones de tu proyecto.",
-    highlight: "Gratis",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Revisión e Inspección",
-    description: "Servicio independiente de revisión para chimeneas existentes. Verificamos funcionamiento, seguridad y estado general con un informe detallado.",
-    highlight: "Certificado",
-  },
-  {
-    icon: Wrench,
-    title: "Mantenimiento Preventivo",
-    description: "Programa de mantenimiento periódico para prolongar la vida útil de tu chimenea y garantizar su funcionamiento óptimo y seguro.",
-    highlight: "Programado",
-  },
-];
+{
+  icon: MapPin,
+  title: "Visita Técnica a Domicilio",
+  description: "Nuestro equipo visita tu hogar para evaluar el espacio, tomar medidas y recomendarte la chimenea ideal según las condiciones de tu proyecto.",
+  highlight: "Gratis"
+},
+{
+  icon: ClipboardCheck,
+  title: "Revisión e Inspección",
+  description: "Servicio independiente de revisión para chimeneas existentes. Verificamos funcionamiento, seguridad y estado general con un informe detallado.",
+  highlight: "Certificado"
+},
+{
+  icon: Wrench,
+  title: "Mantenimiento Preventivo",
+  description: "Programa de mantenimiento periódico para prolongar la vida útil de tu chimenea y garantizar su funcionamiento óptimo y seguro.",
+  highlight: "Programado"
+}];
+
 
 const ServicesSection = () => {
   return (
@@ -40,17 +40,17 @@ const ServicesSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="relative p-8 rounded-2xl bg-secondary/50 border border-border hover:border-primary/50 transition-all duration-300 group text-center"
-            >
+          {services.map((service) =>
+          <div
+            key={service.title}
+            className="relative p-8 rounded-2xl bg-secondary/50 border border-border hover:border-primary/50 transition-all duration-300 group text-center">
+
               <div className="absolute top-4 right-4">
-                <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-xs font-bold text-primary bg-primary/10 px-3 rounded-full uppercase tracking-wider py-[4px] my-[4px]">
                   {service.highlight}
                 </span>
               </div>
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors shadow-md my-[25px]">
                 <service.icon className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground mb-3">
@@ -60,7 +60,7 @@ const ServicesSection = () => {
                 {service.description}
               </p>
             </div>
-          ))}
+          )}
         </div>
 
         <div className="text-center mt-12">
@@ -72,8 +72,8 @@ const ServicesSection = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ServicesSection;
