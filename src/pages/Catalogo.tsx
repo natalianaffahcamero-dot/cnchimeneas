@@ -87,33 +87,46 @@ const Catalogo = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {CATEGORIES.map((category) => (
-              <Link
+              <div
                 key={category.id}
-                to={`/catalogo/${category.id}`}
-                className="group relative overflow-hidden rounded-2xl aspect-[4/3]"
+                className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300"
               >
-                <img
-                  src={categoryImages[category.id]}
-                  alt={category.name}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                <Link to={`/catalogo/${category.id}`} className="block relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={categoryImages[category.id]}
+                    alt={category.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="text-xs font-bold text-primary bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full uppercase tracking-wider">
+                      {category.priceRange}
+                    </span>
+                  </div>
+                </Link>
+                <div className="p-8">
                   <p className="text-primary text-sm font-medium mb-2">
                     {category.shortDescription}
                   </p>
-                  <h2 className="font-display text-4xl font-bold text-foreground mb-3">
+                  <h2 className="font-display text-3xl font-bold text-foreground mb-3">
                     {category.name}
                   </h2>
-                  <p className="text-muted-foreground mb-4 max-w-md">
-                    {category.description}
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {category.longDescription}
                   </p>
-                  <div className="flex items-center gap-2 text-primary font-medium">
-                    <span>Ver modelos</span>
-                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
+                  <div className="flex items-start gap-2 text-sm text-muted-foreground mb-6 pb-6 border-b border-border">
+                    <span className="text-primary font-semibold">Ideal para:</span>
+                    <span>{category.idealFor}</span>
                   </div>
+                  <Link
+                    to={`/catalogo/${category.id}`}
+                    className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
+                  >
+                    Ver modelos
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
