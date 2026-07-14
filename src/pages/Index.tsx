@@ -2,6 +2,7 @@ import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import FeaturedVerticalSection from "@/components/sections/FeaturedVerticalSection";
 import HowToChooseSection from "@/components/sections/HowToChooseSection";
+import FireplaceQuizSection from "@/components/sections/FireplaceQuizSection";
 import CategoriesSection from "@/components/sections/CategoriesSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -13,6 +14,7 @@ const Index = () => {
       <HeroSection />
       <FeaturedVerticalSection />
       <HowToChooseSection />
+      <FireplaceQuizSection />
       <CategoriesSection />
       <ServicesSection />
       <FeaturesSection />
